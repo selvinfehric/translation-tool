@@ -1,0 +1,32 @@
+{
+  "name": "translation-tool",
+  "version": "1.0.0",
+  "description": "Translation tool",
+  "keywords": [
+    "translation",
+    "tool",
+    "localization"
+  ],
+  "homepage": "https://github.com/selvinfehric/translation-tool#readme",
+  "license": "ISC",
+  "author": "Selvin Fehric",
+  "main": "translation-tool.js",
+  "bin": {
+    "translation-tool": "translation-tool.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/selvinfehric/translation-tool.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "config": "^2.0.1"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}

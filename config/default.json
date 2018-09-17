@@ -1,0 +1,8 @@
+{
+    "replaceUnusedValuesWith": "#NOTFOUND#",
+    "removeUnusedValues": false,
+    "addMissingKeysFromDefaultLanguage": true,
+    "replaceNotTranslatedValuesWith": "#NOTTRANSLATED#",
+    "defaultLanguage": "en",
+    "spacing": 4
+}
