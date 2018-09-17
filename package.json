@@ -8,7 +8,7 @@
     "localization"
   ],
   "homepage": "https://github.com/selvinfehric/translation-tool#readme",
-  "license": "ISC",
+  "license": "MIT",
   "author": "Selvin Fehric",
   "main": "translation-tool.js",
   "bin": {
