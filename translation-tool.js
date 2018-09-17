@@ -11,7 +11,7 @@ if (commandLineArgs.help) {
 }
 
 if (!commandLineArgs.source || !commandLineArgs.input || !commandLineArgs.output) {
-  console.error('Source, input and output parameters are required. Use node tool.js --help to see usage.')
+  console.error('Source, input and output parameters are required. Use node translation-tool.js --help to see usage.')
   process.exit()
 }
 
