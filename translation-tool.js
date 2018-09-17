@@ -23,11 +23,13 @@ const translations = JSON.parse(fs.readFileSync(absoluteInputPath, 'utf8'))
 
 Object.keys(translations).map(language => {
   const item = translations[language]
-  item.language = language
+  item.languageKey = language
   return item
 }).forEach(languageObject => {
-  console.log('language ' + languageObject.language)
+  console.log('language ' + languageObject.languageKey)
   Object.keys(languageObject).forEach(translationKey => {
+    if (translationKey === "languageKey")
+      return;
     var found = false
     for (const file of walkSync(absoluteSourcePath)) {
       if (path.extname(file) !== '.js') {
@@ -40,28 +42,28 @@ Object.keys(translations).map(language => {
     if (!found) {
       console.log('NOT FOUND', translationKey)
       if (config.removeUnusedValues) {
-        translations[languageObject.language][translationKey] = null
+        translations[languageObject.languageKey][translationKey] = null
       } else {
-        translations[languageObject.language][translationKey] = config.replaceUnusedValuesWith ? config.replaceUnusedValuesWith : '#NOTFOUND#'
+        translations[languageObject.languageKey][translationKey] = config.replaceUnusedValuesWith ? config.replaceUnusedValuesWith : '#NOTFOUND#'
       }
     }
   })
 
   if (config.addMissingKeysFromDefaultLanguage) {
     var languageKey = config.defaultLanguage ? config.defaultLanguage : 'en'
-    if (languageKey !== languageObject.language) {
+    if (languageKey !== languageObject.languageKey) {
       Object.keys(translations[languageKey]).forEach(translationKey => {
-        if (!(translationKey in translations[languageObject.language])) {
+        if (!(translationKey in translations[languageObject.languageKey])) {
           console.log('NOT TRANSLATED', translationKey)
-          translations[languageObject.language][translationKey] = config.replaceNotTranslatedValuesWith ? config.replaceNotTranslatedValuesWith : '#NOTTRANSLATED#'
+          translations[languageObject.languageKey][translationKey] = config.replaceNotTranslatedValuesWith ? config.replaceNotTranslatedValuesWith : '#NOTTRANSLATED#'
         }
       })
     }
   }
-  translations[languageObject.language]['language'] = null
+  translations[languageObject.languageKey]['languageKey'] = null
 })
 
-function removeNulls (key, value) {
+function removeNulls(key, value) {
   if (value !== null) return value
 }
 

@@ -1,6 +1,6 @@
 # Translation tool
 
-The Translation tool is used for finding missing translations, finding unused keys in source code and remove/update them in translations file, adding missing translations to other languages than default and much more.
+Translation tool is used for finding missing translations, finding unused keys in source code and remove/update them in translations file, adding missing translations to other languages than default and much more.
 
 ## Installation
 
@@ -18,7 +18,7 @@ When using the tool from a command line, you need to pass three parameters: sour
     node translation-tool.js --input ../project1/resources/locales.json --output ../project1/resources/locales-new.json --source ../project1/src/
 ```
 
-If your *translation-tool* folder is in the same folder as your *project1* folder, then this command will trigger search inside *src* directory of your *project1* for all keys located in *resources/locales.json* and generate a new file called *resources/locales-new.json* as a result.
+If your *translation-tool* folder is in the same folder as your *project1* folder, then this command will trigger search inside *src* directory of your *project1* for all languages and keys located in *resources/locales.json* and generate a new file called *resources/locales-new.json* as a result.
 
 ## Configuration
 
@@ -44,7 +44,7 @@ You can configure what do you want this tool do for you. Default configuration c
 
 ## File formats
 
-Input and output file format currently supported:
+Files need to be in utf-8 encoding. Input and output file format currently supported is:
 
 ```json
 {
